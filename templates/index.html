@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Air Quality Prediction</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #56ccf2, #2f80ed);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2f80ed;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px 15px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .result-box {
+            margin-top: 20px;
+            background-color: #e0f7fa;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            color: green;
+            font-weight: bold;
+        }
+
+        table {
+            margin-top: 20px;
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #f1f8ff;
+        }
+
+        table, th, td {
+            border: 1px solid #a0c4ff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Air Quality Prediction</h2>
+        <form action="/predict" method="POST">
+            <input type="text" name="temperature" placeholder="Temperature" required><br>
+            <input type="text" name="humidity" placeholder="Humidity" required><br>
+            <input type="text" name="pm25" placeholder="PM2.5" required><br>
+            <input type="text" name="pm10" placeholder="PM10" required><br>
+            <input type="text" name="no2" placeholder="NO2" required><br>
+            <input type="text" name="so2" placeholder="SO2" required><br>
+            <input type="text" name="co" placeholder="CO" required><br>
+            <input type="text" name="proximity" placeholder="Proximity to Industrial Areas" required><br>
+            <input type="text" name="population" placeholder="Population Density" required><br>
+            <button type="submit">Predict Air Quality</button>
+        </form>
+
+        {% if prediction_text %}
+        <div class="result-box">
+            Predicted Air Quality: {{ prediction_text }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

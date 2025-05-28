@@ -6,7 +6,7 @@ import pickle
 app = Flask(__name__)
 
 # Load the trained model
-model = pickle.load(open('app/air_quality_model.pkl', 'rb'))
+model = pickle.load(open('air_quality_model.pkl', 'rb'))
 
 @app.route('/')
 def home():

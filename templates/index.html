@@ -15,57 +15,61 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+            height: 100vh;
             margin: 0;
-            padding: 10px;
         }
 
         .container {
             background-color: white;
-            padding: 25px 20px;
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-            width: 100%;
-            max-width: 500px;
+            padding: 10px 15px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 95vw;
+            max-width: 480px;
+            max-height: 95vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         h2 {
             text-align: center;
-            margin-bottom: 20px;
+            margin: 5px 0 10px;
+            font-size: 20px;
             color: #2f80ed;
         }
 
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 6px;
         }
 
         label {
-            display: block;
-            margin-bottom: 6px;
+            font-size: 12px;
             font-weight: bold;
-            color: #333;
-            font-size: 14px;
+            display: block;
+            margin-bottom: 3px;
         }
 
         input[type="text"] {
             width: 100%;
-            padding: 10px 12px;
+            padding: 6px 10px;
+            font-size: 12px;
             border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 14px;
+            border-radius: 6px;
         }
 
         button {
+            margin-top: 8px;
             width: 100%;
+            padding: 8px;
+            font-size: 14px;
             background-color: #007bff;
             color: white;
-            padding: 12px;
             border: none;
-            border-radius: 8px;
+            border-radius: 6px;
             cursor: pointer;
             font-weight: bold;
-            margin-top: 10px;
-            font-size: 15px;
         }
 
         button:hover {
@@ -73,23 +77,14 @@
         }
 
         .result-box {
-            margin-top: 20px;
+            margin-top: 10px;
             background-color: #e0f7fa;
-            padding: 15px;
-            border-radius: 10px;
+            padding: 8px;
+            border-radius: 8px;
             text-align: center;
             color: green;
             font-weight: bold;
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 20px 15px;
-            }
-
-            label, input[type="text"], button {
-                font-size: 13px;
-            }
+            font-size: 14px;
         }
     </style>
 </head>
@@ -133,7 +128,7 @@
                 <label for="population">Population Density (people/km²)</label>
                 <input type="text" name="population" id="population" required>
             </div>
-            <button type="submit">Predict Air Quality</button>
+            <button type="submit">Predict</button>
         </form>
 
         {% if prediction_text %}

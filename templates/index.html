@@ -87,15 +87,15 @@
     <div class="container">
         <h2>Air Quality Prediction</h2>
         <form action="/predict" method="POST">
-            <input type="text" name="temperature" placeholder="Temperature" required><br>
-            <input type="text" name="humidity" placeholder="Humidity" required><br>
-            <input type="text" name="pm25" placeholder="PM2.5" required><br>
-            <input type="text" name="pm10" placeholder="PM10" required><br>
-            <input type="text" name="no2" placeholder="NO2" required><br>
-            <input type="text" name="so2" placeholder="SO2" required><br>
-            <input type="text" name="co" placeholder="CO" required><br>
-            <input type="text" name="proximity" placeholder="Proximity to Industrial Areas" required><br>
-            <input type="text" name="population" placeholder="Population Density" required><br>
+            <input type="text" name="temperature" placeholder="Temperature (°C)" required><br>
+            <input type="text" name="humidity" placeholder="Humidity (%)" required><br>
+            <input type="text" name="pm25" placeholder="PM2.5 (µg/m³)" required><br>
+            <input type="text" name="pm10" placeholder="PM10 (µg/m³)" required><br>
+            <input type="text" name="no2" placeholder="NO2 (ppb)" required><br>
+            <input type="text" name="so2" placeholder="SO2 (ppb)" required><br>
+            <input type="text" name="co" placeholder="CO (ppm)" required><br>
+            <input type="text" name="proximity" placeholder="Proximity to Industrial Areas (km)" required><br>
+            <input type="text" name="population" placeholder="Population Density (people/km²)" required><br>
             <button type="submit">Predict Air Quality</button>
         </form>
 

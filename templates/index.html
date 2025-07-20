@@ -29,10 +29,20 @@
             color: #2f80ed;
         }
 
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
         input[type="text"] {
             width: 100%;
             padding: 10px 15px;
-            margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 8px;
             font-size: 14px;
@@ -87,15 +97,42 @@
     <div class="container">
         <h2>Air Quality Prediction</h2>
         <form action="/predict" method="POST">
-            <input type="text" name="temperature" placeholder="Temperature (°C)" required><br>
-            <input type="text" name="humidity" placeholder="Humidity (%)" required><br>
-            <input type="text" name="pm25" placeholder="PM2.5 (µg/m³)" required><br>
-            <input type="text" name="pm10" placeholder="PM10 (µg/m³)" required><br>
-            <input type="text" name="no2" placeholder="NO2 (ppb)" required><br>
-            <input type="text" name="so2" placeholder="SO2 (ppb)" required><br>
-            <input type="text" name="co" placeholder="CO (ppm)" required><br>
-            <input type="text" name="proximity" placeholder="Proximity to Industrial Areas (km)" required><br>
-            <input type="text" name="population" placeholder="Population Density (people/km²)" required><br>
+            <div class="form-group">
+                <label for="temperature">Temperature (°C)</label>
+                <input type="text" name="temperature" id="temperature" required>
+            </div>
+            <div class="form-group">
+                <label for="humidity">Humidity (%)</label>
+                <input type="text" name="humidity" id="humidity" required>
+            </div>
+            <div class="form-group">
+                <label for="pm25">PM2.5 (µg/m³)</label>
+                <input type="text" name="pm25" id="pm25" required>
+            </div>
+            <div class="form-group">
+                <label for="pm10">PM10 (µg/m³)</label>
+                <input type="text" name="pm10" id="pm10" required>
+            </div>
+            <div class="form-group">
+                <label for="no2">NO2 (ppb)</label>
+                <input type="text" name="no2" id="no2" required>
+            </div>
+            <div class="form-group">
+                <label for="so2">SO2 (ppb)</label>
+                <input type="text" name="so2" id="so2" required>
+            </div>
+            <div class="form-group">
+                <label for="co">CO (ppm)</label>
+                <input type="text" name="co" id="co" required>
+            </div>
+            <div class="form-group">
+                <label for="proximity">Proximity to Industrial Areas (km)</label>
+                <input type="text" name="proximity" id="proximity" required>
+            </div>
+            <div class="form-group">
+                <label for="population">Population Density (people/km²)</label>
+                <input type="text" name="population" id="population" required>
+            </div>
             <button type="submit">Predict Air Quality</button>
         </form>
 
